@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2025-12-02-create-customers-records" author="halmber">
+        <insert tableName="customers">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="first_name" value="John"/>
+            <column name="last_name" value="Doe"/>
+            <column name="email" value="john.doe@example.com"/>
+            <column name="phone" value="+380501112233"/>
+            <column name="city" value="Kyiv"/>
+        </insert>
+
+        <insert tableName="customers">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="first_name" value="Alice"/>
+            <column name="last_name" value="Smith"/>
+            <column name="email" value="alice.smith@example.com"/>
+            <column name="phone" value="+380501112234"/>
+            <column name="city" value="Lviv"/>
+        </insert>
+
+        <insert tableName="customers">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="first_name" value="Bob"/>
+            <column name="last_name" value="Johnson"/>
+            <column name="email" value="bob.johnson@example.com"/>
+            <column name="phone" value="+380501112235"/>
+            <column name="city" value="Odesa"/>
+        </insert>
+
+        <insert tableName="customers">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="first_name" value="Maria"/>
+            <column name="last_name" value="Shovk"/>
+            <column name="email" value="maria.shovk@example.com"/>
+            <column name="phone" value="+380501112236"/>
+            <column name="city" value="Kharkiv"/>
+        </insert>
+
+        <insert tableName="customers">
+            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="first_name" value="Taras"/>
+            <column name="last_name" value="Petrov"/>
+            <column name="email" value="taras.petrov@example.com"/>
+            <column name="phone" value="+380501112237"/>
+            <column name="city" value="Dnipro"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

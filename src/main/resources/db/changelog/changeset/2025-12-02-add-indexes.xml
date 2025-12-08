@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="2025-12-02-add-orders-indexes" author="halmber">
+
+        <createIndex tableName="orders" indexName="idx_orders_customer_id">
+            <column name="customer_id"/>
+        </createIndex>
+
+        <createIndex tableName="customers" indexName="idx_customers_email">
+            <column name="email"/>
+        </createIndex>
+
+        <createIndex tableName="orders" indexName="idx_orders_created_at">
+            <column name="created_at"/>
+        </createIndex>
+
+    </changeSet>
+</databaseChangeLog>
