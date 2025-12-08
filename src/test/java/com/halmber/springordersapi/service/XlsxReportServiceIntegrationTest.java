@@ -132,17 +132,18 @@ class XlsxReportServiceIntegrationTest {
             // Row 0 is header, rows 1 and 2 are data
             Row row1 = sheet.getRow(1);
             assertThat(row1).isNotNull();
+            assertThat(getCellValue(row1.getCell(0))).isEqualTo(testOrder2.getId().toString());
             assertThat(getCellValue(row1.getCell(2))).isEqualTo("John Doe");
             assertThat(getCellValue(row1.getCell(3))).isEqualTo("john.doe@example.com");
-            assertThat(row1.getCell(4).getNumericCellValue()).isEqualTo(100.50);
-            assertThat(getCellValue(row1.getCell(5))).isEqualTo("NEW");
-            assertThat(getCellValue(row1.getCell(6))).isEqualTo("CARD");
+            assertThat(row1.getCell(4).getNumericCellValue()).isEqualTo(250.00);
+            assertThat(getCellValue(row1.getCell(5))).isEqualTo("PROCESSING");
+            assertThat(getCellValue(row1.getCell(6))).isEqualTo("PAYPAL");
 
             Row row2 = sheet.getRow(2);
             assertThat(row2).isNotNull();
-            assertThat(row2.getCell(4).getNumericCellValue()).isEqualTo(250.00);
-            assertThat(getCellValue(row2.getCell(5))).isEqualTo("PROCESSING");
-            assertThat(getCellValue(row2.getCell(6))).isEqualTo("PAYPAL");
+            assertThat(row2.getCell(4).getNumericCellValue()).isEqualTo(100.50);
+            assertThat(getCellValue(row2.getCell(5))).isEqualTo("NEW");
+            assertThat(getCellValue(row2.getCell(6))).isEqualTo("CARD");
         }
     }
 
@@ -317,25 +318,6 @@ class XlsxReportServiceIntegrationTest {
             Sheet sheet = workbook.getSheetAt(0);
             // Header + 102 orders (2 from setup + 100 new)
             assertThat(sheet.getLastRowNum()).isEqualTo(102);
-        }
-    }
-
-    @Test
-    @Transactional(readOnly = true)
-    void generateReport_shouldFormatAmountAsNumeric() throws Exception {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
-        try (Stream<Order> stream = orderRepository.streamByFilters(null, null, null)) {
-            xlsxReportService.generateReport(stream, outputStream);
-        }
-
-        try (Workbook workbook = new XSSFWorkbook(new ByteArrayInputStream(outputStream.toByteArray()))) {
-            Sheet sheet = workbook.getSheetAt(0);
-            Row row1 = sheet.getRow(1);
-            Cell amountCell = row1.getCell(4);
-
-            assertThat(amountCell.getCellType()).isEqualTo(CellType.NUMERIC);
-            assertThat(amountCell.getNumericCellValue()).isEqualTo(100.50);
         }
     }
 
