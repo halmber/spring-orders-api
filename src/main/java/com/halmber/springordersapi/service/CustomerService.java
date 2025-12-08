@@ -18,6 +18,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
+/**
+ * Service for managing customer entities.
+ * Provides business logic for creating, reading, updating, and listing customers
+ * with proper validation and error handling.
+ *
+ * <p>Support:
+ * <ul>
+ *   <li>Paginated customer listing with sorting support</li>
+ *   <li>Email uniqueness validation</li>
+ *   <li>Transactional operations for data consistency</li>
+ *   <li>DTO-based data transfer for API layer</li>
+ * </ul>
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -29,7 +42,7 @@ public class CustomerService extends BaseService<Customer, UUID> {
     protected BaseRepository<Customer, UUID> getRepository() {
         return repository;
     }
-
+    
     @Transactional(readOnly = true)
     public CustomerListResponseDto listCustomers(Pageable pageable) {
         Page<Customer> page = repository.findAll(pageable);

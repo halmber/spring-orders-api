@@ -42,7 +42,6 @@ public class OrderController {
     private final OrderMapper orderMapper;
     private final OrderImportService orderImportService;
 
-    // Write readme about pagination
     @GetMapping
     public OrderListResponseDto getPageableList(
             @PageableConstraints(whitelist = {"status", "paymentMethod", "amount"})

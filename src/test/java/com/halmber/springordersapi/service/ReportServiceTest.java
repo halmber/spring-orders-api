@@ -9,10 +9,11 @@ import com.halmber.springordersapi.repository.OrderRepository;
 import com.halmber.springordersapi.util.TestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -25,7 +26,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 @DisplayName("ReportService Unit Tests")
 class ReportServiceTest {
 
@@ -38,7 +39,7 @@ class ReportServiceTest {
     @Mock
     private XlsxReportService xlsxReportService;
 
-    @Autowired
+    @InjectMocks
     private ReportService reportService;
 
     @Test
@@ -201,7 +202,6 @@ class ReportServiceTest {
 
         @SuppressWarnings("unchecked")
         Stream<Order> orderStream = mock(Stream.class);
-        when(orderStream.onClose(any())).thenReturn(orderStream);
 
         when(orderRepository.streamByFilters(any(), any(), any()))
                 .thenReturn(orderStream);
@@ -212,4 +212,3 @@ class ReportServiceTest {
         verify(orderStream).close();
     }
 }
-

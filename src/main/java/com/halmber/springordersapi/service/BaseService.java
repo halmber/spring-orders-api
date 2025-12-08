@@ -6,20 +6,51 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
+/**
+ * Abstract base service providing common CRUD operations for entities.
+ * All service classes should extend this class to inherit basic functionality
+ * such as finding, checking existence, and deleting entities.
+ *
+ * @param <T>  the entity type
+ * @param <ID> the type of entity identifier
+ */
 public abstract class BaseService<T, ID> {
+    /**
+     * Returns the repository instance for performing database operations.
+     * Must be implemented by subclasses to provide their specific repository.
+     */
     protected abstract BaseRepository<T, ID> getRepository();
 
+    /**
+     * Creates an exception indicating that an entity was not found.
+     *
+     * @param id the identifier of the entity that was not found
+     * @return {@link IllegalStateException} with a descriptive message
+     */
     protected IllegalStateException notFound(ID id) {
         String source = this.getClass().getSimpleName().split("(?=[A-Z])")[0];
 
         return new IllegalStateException("%s with id '%s' not found".formatted(source, id));
     }
 
+    /**
+     * Finds an entity by its identifier or throws an exception if not found.
+     *
+     * @param id the entity identifier
+     * @return the found entity
+     * @throws IllegalStateException if entity doesn't exist
+     */
     protected T findByIdOrThrow(ID id) {
         return getRepository().findById(id)
                 .orElseThrow(() -> notFound(id));
     }
 
+    /**
+     * Checks if entity does not exist by identifier.
+     *
+     * @param id the entity identifier
+     * @return true if entity doesn't exist, false otherwise
+     */
     private boolean notExistsById(ID id) {
         return !getRepository().existsById(id);
     }
@@ -57,6 +88,13 @@ public abstract class BaseService<T, ID> {
         }
     }
 
+    /**
+     * Deletes an entity by its identifier.
+     * First checks if the entity exists, then performs deletion.
+     *
+     * @param id the identifier of the entity to delete
+     * @throws IllegalStateException if entity doesn't exist
+     */
     @Transactional
     public void delete(ID id) {
         existsByIdOrThrow(id);

@@ -25,7 +25,27 @@ import java.util.UUID;
 
 /**
  * Service for importing orders from JSON files.
- * Uses streaming Jackson parser to handle large files efficiently without loading entire file into memory.
+ * Uses streaming Jackson parser to handle large files efficiently
+ * without loading the entire file into memory.
+ *
+ * <p>Support:
+ * <ul>
+ *   <li>Memory-efficient streaming JSON parsing</li>
+ *   <li>Batch processing with configurable batch size (50 records)</li>
+ *   <li>Comprehensive validation with detailed error reporting</li>
+ *   <li>File size limit enforcement (10MB maximum)</li>
+ *   <li>Transaction management for data consistency</li>
+ *   <li>Line-by-line error tracking for debugging</li>
+ * </ul>
+ *
+ * <p>Validation checks:
+ * <ul>
+ *   <li>Required fields presence</li>
+ *   <li>UUID format validation</li>
+ *   <li>Customer existence verification</li>
+ *   <li>Enum value validation for status and payment method</li>
+ *   <li>Positive amount validation</li>
+ * </ul>
  */
 @Slf4j
 @Service

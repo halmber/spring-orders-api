@@ -16,6 +16,26 @@ import java.io.OutputStreamWriter;
 import java.util.UUID;
 import java.util.stream.Stream;
 
+/**
+ * Service for generating order reports in various file formats.
+ * Delegates actual report generation to format-specific services (CSV, XLSX).
+ * Uses streaming queries to efficiently handle large datasets without loading
+ * all data into memory at once.
+ *
+ * <p>Supported formats:
+ * <ul>
+ *   <li>CSV - text-based comma-separated values</li>
+ *   <li>XLSX - Excel spreadsheet format</li>
+ * </ul>
+ *
+ * <p>Support:
+ * <ul>
+ *   <li>Memory-efficient streaming queries with Hibernate</li>
+ *   <li>Filter support for customer, status, and payment method</li>
+ *   <li>Direct output stream writing for optimal performance</li>
+ *   <li>Transaction management for consistent data access</li>
+ * </ul>
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor

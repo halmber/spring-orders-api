@@ -12,6 +12,22 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Stream;
 
+/**
+ * Service for generating XLSX (Excel) reports from order data.
+ * Uses Apache POI's SXSSFWorkbook for memory-efficient streaming write operations.
+ *
+ * <p>Report columns:
+ * <ol>
+ *   <li>Order ID</li>
+ *   <li>Customer ID</li>
+ *   <li>Customer Name</li>
+ *   <li>Email</li>
+ *   <li>Amount</li>
+ *   <li>Status</li>
+ *   <li>Payment Method</li>
+ *   <li>Created At</li>
+ * </ol>
+ */
 @Slf4j
 @Service
 public class XlsxReportService {

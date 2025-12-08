@@ -10,9 +10,25 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.Stream;
 
+/**
+ * Service for generating CSV (Comma-Separated Values) reports from order data.
+ * Produces standard CSV files with proper escaping and formatting.
+ *
+ *
+ * <p>Report columns:
+ * <ol>
+ *   <li>Order ID</li>
+ *   <li>Customer ID</li>
+ *   <li>Customer Name</li>
+ *   <li>Email</li>
+ *   <li>Amount</li>
+ *   <li>Status</li>
+ *   <li>Payment Method</li>
+ *   <li>Created At</li>
+ * </ol>
+ */
 @Slf4j
 @Service
-
 public class CsvReportService {
     private static final DateTimeFormatter DATE_FORMATTER =
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.systemDefault());

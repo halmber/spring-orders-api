@@ -21,6 +21,19 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
+/**
+ * Service for managing order entities.
+ * Provides business logic for creating, reading, updating, and filtering orders
+ * with customer validation and relationship management.
+ *
+ * <p>Support:
+ * <ul>
+ *   <li>Paginated order listing with sorting support</li>
+ *   <li>Advanced filtering by customer, status, and payment method</li>
+ *   <li>Customer validation before order creation</li>
+ *   <li>Support for both full and short response formats</li>
+ * </ul>
+ */
 @Service
 @RequiredArgsConstructor
 public class OrderService extends BaseService<Order, UUID> {
