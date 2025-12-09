@@ -545,6 +545,10 @@ POST /api/orders/upload
 Content-Type: multipart/form-data
 ```
 
+You can use prepared file that contains orders records with `customerId`'s. Liquibase creates some customers
+with certain id's. So after running the application you can use for `POST /api/orders/upload` json from
+`src/main/resources/jsonFiles/sampleOrdersImport.json`.
+
 **Request:**
 
 - Form field: `file` (JSON file)
