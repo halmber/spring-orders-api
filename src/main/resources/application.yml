@@ -36,7 +36,7 @@ spring:
 
 springdoc:
   swagger-ui:
-    #change later and test
-    enabled: false
+    path: /swagger-ui
+    enabled: true
   api-docs:
-    enabled: false
+    enabled: true

@@ -108,14 +108,14 @@ Invalid requests throw `InvalidRequestParameterException` with descriptive error
 #### 1. Get Paginated Customers List
 
 ```http
-GET /api/customers?page=0&size=10&sort=firstName,asc
+GET /api/customers?page=0&size=10&sort=firstName,asc&sort=city,desc
 ```
 
 **Query Parameters:**
 
 - `page` (optional, default: 0) - Page number
 - `size` (optional, default: 5) - Page size
-- `sort` (optional) - Sorting field and direction
+- `sort` (optional) - Sorting field and direction, can retrieve multiple sorting fields
 
 **Allowed Sort Fields:** `firstName`, `lastName`, `city`
 
