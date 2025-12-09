@@ -728,7 +728,7 @@ CREATE TABLE orders
 spring.datasource.url=jdbc:postgresql://localhost:5432/orders_db
 spring.datasource.username=your_username
 spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.ddl-auto=none
 spring.jpa.show-sql=true
 # File upload settings
 spring.servlet.multipart.max-file-size=10MB

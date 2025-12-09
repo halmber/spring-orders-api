@@ -1,0 +1,182 @@
+[
+  {
+    "customerId": "67da6e0e-6e6b-4774-851d-35093e56c26f",
+    "amount": 125.50,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "29567719-d315-497a-b05f-092d0e91db4e",
+    "amount": 89.99,
+    "status": "PROCESSING",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "eecde4a5-19ad-4c1f-bb4b-213d78b2609b",
+    "amount": 250.00,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "2e93aa7c-66a8-436a-a9e7-03ab6d1b6805",
+    "amount": 45.75,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "ee8e598e-93a1-44ff-b543-efa61d7c680f",
+    "amount": 199.99,
+    "status": "PROCESSING",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "67da6e0e-6e6b-4774-851d-35093e56c26f",
+    "amount": 320.00,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "29567719-d315-497a-b05f-092d0e91db4e",
+    "amount": 67.50,
+    "status": "CANCELED",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "eecde4a5-19ad-4c1f-bb4b-213d78b2609b",
+    "amount": 445.99,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "2e93aa7c-66a8-436a-a9e7-03ab6d1b6805",
+    "amount": 78.25,
+    "status": "PROCESSING",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "ee8e598e-93a1-44ff-b543-efa61d7c680f",
+    "amount": 156.80,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "67da6e0e-6e6b-4774-851d-35093e56c26f",
+    "amount": 92.00,
+    "status": "NEW",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "29567719-d315-497a-b05f-092d0e91db4e",
+    "amount": 340.50,
+    "status": "PROCESSING",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "eecde4a5-19ad-4c1f-bb4b-213d78b2609b",
+    "amount": 125.99,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "2e93aa7c-66a8-436a-a9e7-03ab6d1b6805",
+    "amount": 520.00,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "ee8e598e-93a1-44ff-b543-efa61d7c680f",
+    "amount": 87.45,
+    "status": "CANCELED",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "67da6e0e-6e6b-4774-851d-35093e56c26f",
+    "amount": 275.30,
+    "status": "PROCESSING",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "29567719-d315-497a-b05f-092d0e91db4e",
+    "amount": 99.99,
+    "status": "DONE",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "eecde4a5-19ad-4c1f-bb4b-213d78b2609b",
+    "amount": 450.00,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "2e93aa7c-66a8-436a-a9e7-03ab6d1b6805",
+    "amount": 63.80,
+    "status": "PROCESSING",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "ee8e598e-93a1-44ff-b543-efa61d7c680f",
+    "amount": 189.50,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "67da6e0e-6e6b-4774-851d-35093e56c26f",
+    "amount": 310.00,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "29567719-d315-497a-b05f-092d0e91db4e",
+    "amount": 145.75,
+    "status": "CANCELED",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "eecde4a5-19ad-4c1f-bb4b-213d78b2609b",
+    "amount": 225.99,
+    "status": "PROCESSING",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "2e93aa7c-66a8-436a-a9e7-03ab6d1b6805",
+    "amount": 399.00,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "ee8e598e-93a1-44ff-b543-efa61d7c680f",
+    "amount": 56.50,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "67da6e0e-6e6b-4774-851d-35093e56c26f",
+    "amount": 670.00,
+    "status": "PROCESSING",
+    "paymentMethod": "PAYPAL"
+  },
+  {
+    "customerId": "29567719-d315-497a-b05f-092d0e91db4e",
+    "amount": 112.30,
+    "status": "DONE",
+    "paymentMethod": "CASH"
+  },
+  {
+    "customerId": "eecde4a5-19ad-4c1f-bb4b-213d78b2609b",
+    "amount": 88.88,
+    "status": "NEW",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "2e93aa7c-66a8-436a-a9e7-03ab6d1b6805",
+    "amount": 234.56,
+    "status": "PROCESSING",
+    "paymentMethod": "CARD"
+  },
+  {
+    "customerId": "ee8e598e-93a1-44ff-b543-efa61d7c680f",
+    "amount": 555.00,
+    "status": "DONE",
+    "paymentMethod": "PAYPAL"
+  }
+]

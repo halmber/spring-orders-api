@@ -6,7 +6,7 @@
 
     <changeSet id="2025-12-02-create-customers-records" author="halmber">
         <insert tableName="customers">
-            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="id" value="67da6e0e-6e6b-4774-851d-35093e56c26f"/>
             <column name="first_name" value="John"/>
             <column name="last_name" value="Doe"/>
             <column name="email" value="john.doe@example.com"/>
@@ -15,7 +15,7 @@
         </insert>
 
         <insert tableName="customers">
-            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="id" value="29567719-d315-497a-b05f-092d0e91db4e"/>
             <column name="first_name" value="Alice"/>
             <column name="last_name" value="Smith"/>
             <column name="email" value="alice.smith@example.com"/>
@@ -24,7 +24,7 @@
         </insert>
 
         <insert tableName="customers">
-            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="id" value="eecde4a5-19ad-4c1f-bb4b-213d78b2609b"/>
             <column name="first_name" value="Bob"/>
             <column name="last_name" value="Johnson"/>
             <column name="email" value="bob.johnson@example.com"/>
@@ -33,7 +33,7 @@
         </insert>
 
         <insert tableName="customers">
-            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="id" value="2e93aa7c-66a8-436a-a9e7-03ab6d1b6805"/>
             <column name="first_name" value="Maria"/>
             <column name="last_name" value="Shovk"/>
             <column name="email" value="maria.shovk@example.com"/>
@@ -42,7 +42,7 @@
         </insert>
 
         <insert tableName="customers">
-            <column name="id" valueComputed="gen_random_uuid()"/>
+            <column name="id" value="ee8e598e-93a1-44ff-b543-efa61d7c680f"/>
             <column name="first_name" value="Taras"/>
             <column name="last_name" value="Petrov"/>
             <column name="email" value="taras.petrov@example.com"/>
