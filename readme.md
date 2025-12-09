@@ -719,29 +719,69 @@ CREATE TABLE orders
 - Java 21 or higher
 - PostgreSQL (H2 for testing)
 - Maven
+- Docker and Docker Compose (recommended) or PostgreSQL installed locally
 
-### Configuration
+### Option 1: Running with Docker Compose (Recommended)
 
-**application.properties:**
+This project uses **Liquibase** for database migrations and seed data, which is why `spring.jpa.hibernate.ddl-auto` is
+set to `none`. The database schema is managed entirely by Liquibase, not Hibernate.
 
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/orders_db
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=none
-spring.jpa.show-sql=true
-# File upload settings
-spring.servlet.multipart.max-file-size=10MB
-spring.servlet.multipart.max-request-size=10MB
-```
-
-### Build and Run
+**1. Start the Database Container**
 
 ```bash
-# Build
-mvn clean install
+docker-compose up -d
+```
 
-# Run
+This will:
+
+- Start PostgreSQL on port `5433` (host) → `5432` (container)
+- Create the database with credentials from `docker-compose.yml`
+
+**2. Verify Container is Running**
+
+```bash
+docker-compose ps
+```
+
+**3. Run the Application**
+
+```bash
+mvn spring-boot:run
+```
+
+Liquibase will automatically:
+
+- Create database schema
+- Insert seed data
+- Apply any pending migrations
+
+### Option 2: Running with Local PostgreSQL
+
+If you prefer to use a local PostgreSQL installation:
+
+**1. Create Database**
+
+```sql
+CREATE
+DATABASE orders;
+```
+
+**2. Update Configuration**
+
+Modify `application.properties`:
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/orders
+```
+
+**Note:**
+
+- Change port from `5433` (Docker) to `5432` (local PostgreSQL)
+- Liquibase will handle all migrations and seed data.
+
+**3. Run the Application**
+
+```bash
 mvn spring-boot:run
 ```
 
@@ -780,7 +820,7 @@ The project includes comprehensive integration tests for:
 
 Once the application is running, you can access:
 
-- **Swagger UI**: `http://localhost:8080/swagger-ui.html` (if configured)
+- **Swagger UI**: `http://localhost:8080/swagger-ui`
 
 ---
 
